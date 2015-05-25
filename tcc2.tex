@@ -19,12 +19,18 @@
 %==============================================================================
 \documentclass[brazil]{abnt-UVV/abnt-uvv}
 \usepackage{tabularx}
-\usepackage{graphicx,url, enumerate}
+\usepackage{graphicx, enumerate}
+\usepackage{url}
 \usepackage[brazil]{babel}   
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{kotex}
 \usepackage[colorlinks,linkcolor=black,citecolor=black, hyperindex]{hyperref}
 \usepackage{listings}
+\usepackage{afterpage}
+\usepackage{hyperref}
+ \usepackage[titletoc]{appendix}
+\hypersetup{colorlinks=false}
 
 \renewcommand{\rmdefault}{phv} 
 \renewcommand{\sfdefault}{phv} 
@@ -46,7 +52,7 @@
 
 \local{VILA VELHA}
 
-\data{2013} 
+\data{2015} 
 %==============================================================================
 
 %INÍCIO DO DOCUMENTO
@@ -123,7 +129,7 @@ SEU TEXTO. SE CITAR ALGUMA PESSOA, COLOQUE O NOME DELA COMPLETO.
 %=============================================================================
 
 %=============================================================================
-% 7) Epígrafe (Opcional)
+% 7) Epílogo (Opcional)
 %=============================================================================
 \vspace*{15cm}
 \begin{flushright}{}"\emph{SEU TEXTO.}"\\
@@ -174,7 +180,7 @@ Resumo
 %=============================================================================
 
 %=============================================================================
-% 12) Abstract (Não é necessário em TCC's somente em dissertações e teses.)
+% 12) Abstract
 %=============================================================================
 \begin{abstract}
 
@@ -191,6 +197,7 @@ Resumo
 %Inclusão dos capítulos que foram escritos em arquivos separados.
 %Os capítulos são gerados de acordo com a ordem de inclusão.
 %Essa é uma sugestão de capítulos a serem desenvolvidos.
+%Pode ser adicionado ou retirado qualquer capitulo de acordo com a necessidade.
 
 %capítulo 1 - Introdução
 \include{cap_introducao}
@@ -220,27 +227,31 @@ Resumo
 %Bibliografia com geração automática
 
 %bibliografia é o nome do arquivo de bibliografia (bibliografia.bib)
-\bibliography{bibliografia}{}
+\bibliography{bibliografia}
 
 %abnt-alf = forma de apresentação da referência dentro do texto.
 \bibliographystyle{abnt-alf}
 %==============================================================================
 
-%Bibliografia manual
 
-\begin{thebibliography}{widest entry}
-\bibitem[01]{wang} WANGENHEIM, Christiane Gresse Von; WANGENHEIM, Aldo Von. "Raciocínio Baseado em Casos", Curitiba, Atlas, 2003.
-\bibitem[02]{Io02} Insercure org. \emph{The Network Explotation Tool and Security Scanner}. 2002. URL:\verb+http://www.insecure.org/nmap.+ Last Visited: 22/07/2002.
-\end{thebibliography}
+%==============================================================================
+%				  APÊNDICE (OPCIONAL)
+%	Apêndices são textos ou documentos elaborados pelo autor.
+%==============================================================================
 
-
+%capítulo - Apendice
+\include{cap_apendice}
 
 
 %==============================================================================
 %				  ANEXOS (OPCIONAL)
+%	 Anexos são textos ou documentos não elaborados pelo autor. 
 %==============================================================================
 
+%Uma possibilidade é a importação de um capitulo de anexo.
 \anexo
+\include{cap_anexo}
+
 
 %Exemplo de capítulo que deve ser coloca em anexo
 \chapter*{CÓDIGOS DESENVOLVIDOS}
@@ -261,10 +272,6 @@ Um forma de inserir códigos de programação dentro do texto é:
 Outra possibilidade muito útil, é a importação do arquivo com o código fonte. Desta forma, se você modificar o código fonte, para atualizar o seu documento basta recompilar o arquivo LaTeX. O comando para importar código fonte para LaTeX é o seguinte:
 
 \lstinputlisting{codigos/ola_mundo_latex.cpp}
-
-Mais informações sobre esse assunto, entre no site: \verb+http://www.borges-solutions.com+
-\verb+/inserindo-codigos-fonte-em-arquivos-latex/+
-
 
 
 %Fim do documento
